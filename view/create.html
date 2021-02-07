@@ -1,0 +1,36 @@
+<md-content layout-padding>
+    <form name="projectForm">
+        <md-input-container class="md-block">
+            <label>Unesite ime hotela :</label>
+            <input md-maxlength="70" required name="question" ng-model="formData.hotelQuestion">
+            <div ng-messages="projectForm.question.$error">
+                <div ng-message="required">Ovo polje je obavezno.</div>
+                <div ng-message="md-maxlength">Manje od 70 karaktera duzine.</div>
+            </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Ime apartmana</label>
+            <input required name="apartman1" ng-model="formData.hotelApartman1">
+            <div ng-messages="projectForm.hotelApartman1.$error">
+                <div ng-message="required">Ovo polje je obavezno.</div>
+            </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Ime apartmana</label>
+            <input required name="apartman2" ng-model="formData.hotelApartman2"/>
+            <div ng-messages="projectForm.hotelApartman2.$error" role="alert">
+                <div ng-message="required">Ovo polje je obavezno.</div>
+            </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <label>Ime apartmana</label>
+            <input required name="apartman3" ng-model="formData.hotelApartman3"/>
+            <div ng-messages="projectForm.hotelApartman3.$error" role="alert">
+                <div ng-message="required">Ovo polje je obavezno.</div>
+            </div>
+        </md-input-container>
+        <md-input-container class="md-block">
+            <md-button class="md-raised md-primary" ng-disabled="projectForm.$invalid" ng-click="submitHotel($event)">Kreiraj ponudu</md-button>
+        </md-input-container>
+    </form>
+</md-content>

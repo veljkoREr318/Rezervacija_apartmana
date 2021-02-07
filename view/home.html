@@ -1,0 +1,16 @@
+<md-content flex id="content" layout='column'>
+    <md-card ng-repeat='hotelInfo in hotelData' ng-hide="hiddenrows.indexOf($index) !== -1">
+        <md-card-title>
+            <md-card-title-text>
+                <span class="md-headline">{{hotelInfo.question}}</span>
+            </md-card-title-text>
+        </md-card-title>
+        <md-card-content>
+            <md-radio-group layout="column" ng-model="hotelInfo.selected" ng-change='updateVote($index)'>
+                <md-radio-button ng-repeat="hotels in hotelInfo.hotels" ng-value="hotels.option" aria-label="{{ hotels.option }}">
+                    {{ hotels.option }}
+                </md-radio-button>
+            </md-radio-group>
+        </md-card-content>
+    </md-card>
+</md-content>
